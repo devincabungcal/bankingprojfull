@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Main from "./components/MainComponent";
+import Navbar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import CreateAccount from "./components/CreateAccount";
 import Deposit from "./components/Deposit";
@@ -31,7 +31,7 @@ function App() {
       <userContext.Provider
         value={{ currentUser, setCurrentUser, updateBalance }}
       >
-      <Main />
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

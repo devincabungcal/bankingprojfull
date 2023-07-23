@@ -1,5 +1,5 @@
 import React from "react";
-
+import bankImage from "../bank_PNG29.png"
 
 function Home(){
     return(
@@ -10,8 +10,7 @@ function Home(){
             <h1 class="card-title">Devin's Bad Bank</h1>
             <p class="card-text">Your information is not safe with us!</p>
             
-            <img src={require('/Users/raecheldesenamacbook/Documents/MIT misc/bankingapp/bankingappproj/bankingproject/src/bank_PNG29.png')} class="card-img-top" 
-            style={{}}alt="..."/>
+            <img src={bankImage} class="card-img-top" alt="..."/>
 
             
 

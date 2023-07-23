@@ -1,6 +1,5 @@
 {
   "name": "bankingproject",
-  "homepage": "https://devincabungcal.github.io/bankingproject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +12,6 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
