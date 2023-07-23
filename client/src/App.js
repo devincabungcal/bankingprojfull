@@ -6,6 +6,7 @@ import Deposit from "./components/Deposit";
 import Withdraw from "./components/Withdraw";
 import AllData from "./components/AllData";
 import Home from "./components/Home";
+import Login from "./components/Login";
 import userContext from "./components/Context";
 import { getCurrentAccountData } from "./api";
 
@@ -22,7 +23,10 @@ function App() {
     });
   };
   useEffect(function () {
-    setCurrentUser(getCurrentAccountData());
+    async function getCurrentUser(){
+    setCurrentUser(await getCurrentAccountData());
+    }
+    getCurrentUser()
   }, []);
 
   return (
@@ -36,6 +40,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/createAccount" element={<CreateAccount />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/deposit" element={<Deposit />} />
           <Route path="/withdraw" element={<Withdraw />} />
           <Route path="/alldata" element={<AllData />} />

@@ -10,9 +10,13 @@ const Withdraw = () => {
   const { currentUser, updateBalance } = useContext(userContext);
 
 
-  const handleSubmit = event => {
-    const newBalance = makeWithdrawal(withdraw)
-    updateBalance(newBalance)
+  const handleSubmit = async event => {
+    const {balance, error} = await makeWithdrawal(withdraw)
+    if(error){
+      alert(error)
+      return
+    }
+    updateBalance(balance)
 
   };
   

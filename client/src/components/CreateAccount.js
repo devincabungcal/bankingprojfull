@@ -12,12 +12,12 @@ function CreateAccount(){
   
     const {setCurrentUser} = useContext(userContext);  
   
-    function handleCreate(){
+    async function handleCreate(){
       console.log(name,email,password);
       if (!validate(name,     'name'))     return;
       if (!validate(email,    'email'))    return;
       if (!validate(password, 'password')) return;
-      const newUser = createAccount(name, email, password)
+      const newUser = await createAccount(name, email, password)
       setCurrentUser(newUser)
       setShow(false);
     }   

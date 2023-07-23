@@ -6,8 +6,8 @@ const Deposit = () => {
   const [deposit, setDeposit] = React.useState("");
   const { currentUser, updateBalance } = useContext(userContext);
 
-  const handleSubmit = (event) => {
-    const newBalance = makeDeposit(deposit);
+  const handleSubmit = async (event) => {
+    const newBalance = await makeDeposit(deposit);
     updateBalance(newBalance)
   };
 

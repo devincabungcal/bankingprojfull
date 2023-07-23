@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { logOut } from "../api";
 import userContext from "./Context";
 
 function NavBar() {
-  const { currentUser } = useContext(userContext);
-
+  const { currentUser, setCurrentUser } = useContext(userContext);
+  function handleLogOut(){
+    logOut()
+    setCurrentUser(null)
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-md bg-body-tertiary">
@@ -26,8 +30,19 @@ function NavBar() {
                   Create Account
                 </Link>
               </li>
-
               <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/Login/"
+                  title="Create an Account here to get started"
+                >
+                  Log in
+                </Link>
+              </li>
+
+              {currentUser &&
+                <>
+                <li className="nav-item">
                 <Link
                   className="nav-link"
                   to="/deposit/"
@@ -45,7 +60,8 @@ function NavBar() {
                 >
                   Make a Withdrawal
                 </Link>
-              </li>
+              </li></>}
+              
 
               <li className="nav-item">
                 <Link
@@ -58,7 +74,15 @@ function NavBar() {
               </li>
             </ul>
             <ul className="navbar-nav">
-              <li className="nav-item">{currentUser?.name}</li>
+              {currentUser && <li className="nav-item">
+              <Link
+                  className="nav-link"
+                  onClick={handleLogOut}
+                  title="Click te see All Data"
+                >
+                {currentUser?.name}
+                </Link>
+                </li>}
             </ul>
           </div>
         </div>

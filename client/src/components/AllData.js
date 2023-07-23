@@ -5,7 +5,10 @@ import { getAccountsData } from "../api";
 function AllData(){
     const [allData, setAllData]         = React.useState(null);
     useEffect(function(){
-        setAllData(getAccountsData())
+        async function fetchAccountsData(){
+            setAllData(await getAccountsData())
+        }
+        fetchAccountsData()
     }, [])
     return(
         <>
