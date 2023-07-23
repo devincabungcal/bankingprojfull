@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon@latest ."
+    "dev": "npx nodemon@latest .",
+    "start": "node ."
   },
   "keywords": [],
   "author": "",
